@@ -62,25 +62,29 @@ def Loginpage(request):
 
 
 def LoginUser(request):
-    if request.POST['role'] == 'candidate':
-        email = request.POST['email']
-        password = request.POST['password']
-        
-        user = UserMaster.objects.get(email=email)
-        
-        if user:
-            if user.password == password and user.role == "Candidate":
-                can = Candidate.objects.get(user_id=user)
-                request.session['id'] = user.id 
-                request.session['role'] = user.role
-                request.session['firstname'] = can.firstname
-                request.session['lastname'] = can.lastname
-                request.session['email'] = user.email
-                return redirect('index')
+    if request.method == 'POST':
+        if request.POST['role']=='Candidate':
+            email = request.POST['email']
+            password = request.POST['password']
+            
+            user = UserMaster.objects.get(email=email)
+            
+            if user:
+                if user.password == password and user.role == "Candidate":
+                    can = Candidate.objects.get(user_id=user)
+                    request.session['id'] = user.id 
+                    request.session['role'] = user.role
+                    request.session['firstname'] = can.firstname
+                    request.session['lastname'] = can.lastname
+                    request.session['email'] = user.email
+                    return redirect('index')
+                else:
+                    message = "Invalid Password"
+                    return render(request,"app/login.html",{'msg':message})
             else:
-                message = "Invalid Password"
+                message = "User doesnot exist"
                 return render(request,"app/login.html",{'msg':message})
-        else:
-            message = "User doesnot exist"
-            return render(request,"app/login.html",{'msg':message})
-                
+        
+
+def ProfilePage(request):
+    return render(request,"app/profile.html")

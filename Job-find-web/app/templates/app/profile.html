@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Application Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+
+      input[type="file"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+
+      input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Job Application Form</h2>
+      <form action="#" method="post" enctype="multipart/form-data">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required />
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required />
+
+        <label for="jobType">Job Type:</label>
+        <select id="jobType" name="jobType" required>
+          <option value="">Select Job Type</option>
+          <option value="Web Developer">Web Developer</option>
+          <option value="PHP Developer">PHP Developer</option>
+          <option value="Web Designer">Web Designer</option>
+          <option value="Graphic Designer">Graphic Designer</option>
+        </select>
+
+        <label for="jobCategory">Job Category:</label>
+        <select id="jobCategory" name="jobCategory" required>
+          <option value="">Select Job Category</option>
+          <option value="Afghanistan">Afghanistan</option>
+          <option value="Bangladesh">Bangladesh</option>
+          <option value="Canada">Canada</option>
+          <option value="Dominica">Dominica</option>
+        </select>
+
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country" required />
+
+        <label for="minSalary">Minimum Salary:</label>
+        <input type="text" id="minSalary" name="minSalary" required />
+
+        <label for="maxSalary">Maximum Salary:</label>
+        <input type="text" id="maxSalary" name="maxSalary" required />
+
+        <label for="educationLevel">Education Level:</label>
+        <select id="educationLevel" name="educationLevel" required>
+          <option value="">Select Education Level</option>
+          <option value="Level-1">Level-1</option>
+          <option value="Level-2">Level-2</option>
+          <option value="Level-3">Level-3</option>
+          <option value="Level-4">Level-4</option>
+        </select>
+
+        <label for="experience">Year of Experience:</label>
+        <select id="experience" name="experience" required>
+          <option value="">Select Year of Experience</option>
+          <option value="1 Year">1 Year</option>
+          <option value="2 Years">2 Years</option>
+          <option value="3 Years">3 Years</option>
+        </select>
+
+        <label for="resume">Upload Resume:</label>
+        <input
+          type="file"
+          id="resume"
+          name="resume"
+          accept=".pdf,.doc,.docx"
+          required
+        />
+
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+</html>
