@@ -219,7 +219,11 @@
                 >{{request.session.firstname}} {{request.session.lastname}}</a
               ><span class="menu-arrow"></span>
               <ul class="submenu">
-                <li><a href="{% url 'profile' %}">Profile</a></li>
+                <li>
+                  <a href="{% url 'profile' pk=request.session.id %}"
+                    >Profile</a
+                  >
+                </li>
                 <li><a href="job-grid.html">Logout</a></li>
               </ul>
             </li>

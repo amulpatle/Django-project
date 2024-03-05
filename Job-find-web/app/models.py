@@ -23,6 +23,16 @@ class Candidate(models.Model):
     address = models.CharField(max_length=150)
     dob = models.CharField(max_length=50)
     gender = models.CharField(max_length=50)
+    min_salary = models.BigIntegerField(default=0)
+    max_salary = models.BigIntegerField(default=0)
+    job_type = models.CharField(max_length=150,default="null")
+    jobcategory = models.CharField(max_length=150,default="null")
+    country = models.CharField(max_length=150,default="null")
+    highestedu = models.CharField(max_length =150,default=0)
+    experience = models.CharField(max_length =150,default=0)
+    website = models.CharField(max_length =150,default="null")
+    shift = models.CharField(max_length =150,default="null")
+    jobdescription = models.CharField(max_length =150,default="null")
     profile_pic = models.ImageField(upload_to="app/img/candidate")
     
 class Company(models.Model):
@@ -34,5 +44,6 @@ class Company(models.Model):
     city = models.CharField(max_length=50)
     contact = models.CharField(max_length=50)
     address = models.CharField(max_length=150)
+   
     logo_pic = models.ImageField(upload_to="app/img/company/")
     
