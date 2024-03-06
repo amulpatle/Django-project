@@ -13,4 +13,5 @@ urlpatterns = [
    ################ company side ############
    
    path("companyindex/",views.CompanyIndexPage,name = "companyindex"),
+   path("companyprofile/",views.CompanyProfilePage,name="companyprofile")
 ]

@@ -193,3 +193,6 @@ def UpdateProfile(request, pk):
 
 def CompanyIndexPage(request):
     return render(request,"app/company/index.html")
+
+def CompanyProfilePage(request):
+    return render(request,"app/company/profile.html")
