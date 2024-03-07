@@ -50,3 +50,18 @@ class Company(models.Model):
    
     logo_pic = models.ImageField(upload_to="app/img/company/")
     
+class JobDetails(models.Model):
+    user_id = models.ForeignKey(UserMaster,on_delete=models.CASCADE)
+    jobname = models.CharField(max_length= 250)
+    companyname = models.CharField(max_length= 250)
+    companyaddress = models.CharField(max_length= 250)
+    jobdescription = models.CharField(max_length= 250)
+    qualification = models.CharField(max_length= 250)
+    responsibility = models.CharField(max_length= 250)
+    location = models.CharField(max_length= 250)
+    companyemail = models.CharField(max_length= 250)
+    companycontact = models.CharField(max_length= 250)
+    salarypackage = models.CharField(max_length= 250)
+    experience = models.CharField(max_length= 250)
+    logo = models.ImageField(upload_to="app/img/jobpost",default="")
+    
