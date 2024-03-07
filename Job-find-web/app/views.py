@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import *
 from random import randint
+from django.core.files.uploadedfile import SimpleUploadedFile
 # Create your views here.
 
 def IndexPage(request):
@@ -212,5 +213,22 @@ def UpdateCompnyProfile(request,pk):
          comp.website = request.POST['website']
          comp.Description = request.POST['Description']
          comp.address = request.POST['address']
-         comp.logo_pic = request.POST['image']
+         if 'image' in  request.FILES:
+             image_file = request.FILES['image']
+             comp.logo_pic = image_file
+         comp.save()
+         url = f"/companyprofile/{pk}"
+         
+         return redirect(url)
+         
+        #  comp.logo_pic = request.POST['image']
+    
+        #     if 'image' in request.FILES:
+        #         image_file = request.FILES['image']
+        #         comp.logo_pic = image_file
+                
+                
+        # comp.save()
+        # url = f"/companyprofile/{pk}"
+        # return redirect(url)
 
