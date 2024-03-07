@@ -45,7 +45,7 @@ class Company(models.Model):
     contact = models.CharField(max_length=50)
     address = models.CharField(max_length=150)
     website = models.CharField(max_length = 150,default = "")
-    Descriptionn = models.CharField(max_length = 250,default = "")
+    Description = models.CharField(max_length = 250,default = "")
     
    
     logo_pic = models.ImageField(upload_to="app/img/company/")

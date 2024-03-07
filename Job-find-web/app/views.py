@@ -199,3 +199,18 @@ def CompanyProfilePage(request,pk):
     comp = Company.objects.get(user_id = user)
     return render(request,"app/company/profile.html",{'user':user,'comp':comp})
 
+def UpdateCompnyProfile(request,pk):
+    user = UserMaster.objects.get(pk=pk)
+    if user.role == 'Company':
+         comp = Company.objects.get(user_id = user)
+         comp.firstname = request.POST['firstname']
+         comp.lastname = request.POST['lastname']
+         comp.email = request.POST['email']
+         comp.contact = request.POST['contact']
+         comp.city = request.POST['city']
+         comp.state = request.POST['state']
+         comp.website = request.POST['website']
+         comp.Description = request.POST['Description']
+         comp.address = request.POST['address']
+         comp.logo_pic = request.POST['image']
+

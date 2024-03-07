@@ -52,33 +52,61 @@
         </div>
         <div class="mb-3">
           <label for="state" class="form-label">State:</label>
-          <input type="text" class="form-control" id="state" />
+          <input
+            type="text"
+            class="form-control"
+            id="state"
+            name="state"
+            value="{{comp.state}}"
+          />
         </div>
         <div class="mb-3">
           <label for="city" class="form-label">City:</label>
-          <input type="text" class="form-control" id="city" />
+          <input
+            type="text"
+            class="form-control"
+            id="city"
+            name="city"
+            value="{{comp.city}}"
+          />
         </div>
         <div class="mb-3">
           <label for="company_contact" class="form-label"
             >Company Contact:</label
           >
-          <input type="text" class="form-control" id="company_contact" />
+          <input
+            type="text"
+            class="form-control"
+            id="company_contact"
+            name="contact"
+            value="{{comp.contact}}"
+          />
         </div>
         <div class="mb-3">
           <label for="company_website" class="form-label"
             >Company Website:</label
           >
-          <input type="url" class="form-control" id="company_website" />
+          <input
+            type="url"
+            class="form-control"
+            id="company_website"
+            name="website"
+            value="{{comp.website}}"
+          />
         </div>
         <div class="mb-3">
           <label for="company_description" class="form-label"
             >Company Description:</label
           >
-          <textarea class="form-control" id="company_description"></textarea>
+          <textarea
+            class="form-control"
+            id="company_description"
+            name="Description"
+          ></textarea>
         </div>
         <div class="mb-3">
           <label for="file" class="form-label">Choose a file:</label>
-          <input type="file" class="form-control" id="file" />
+          <input type="file" class="form-control" id="file" name="image" />
         </div>
         <button type="submit" class="btn btn-primary">Save</button>
       </form>
