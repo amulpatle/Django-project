@@ -55,6 +55,7 @@ class JobDetails(models.Model):
     jobname = models.CharField(max_length= 250)
     companyname = models.CharField(max_length= 250)
     companyaddress = models.CharField(max_length= 250)
+    companywebsite = models.CharField(max_length= 250,default="")
     jobdescription = models.CharField(max_length= 250)
     qualification = models.CharField(max_length= 250)
     responsibility = models.CharField(max_length= 250)

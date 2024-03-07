@@ -246,6 +246,7 @@ def JobDetailSubmit(request):
         jobname = request.POST['jobname']
         companyname = request.POST['companyname']
         companyaddress = request.POST['companyaddress']
+        companywebsite = request.POST['companywebsite']
         jobdescription = request.POST['jobdescription']
         qualification = request.POST['qualification']
         responsibility = request.POST['responsibility']
@@ -256,7 +257,17 @@ def JobDetailSubmit(request):
         experience = request.POST['experience']
         logo = request.FILES['image']
         
-        newjob = JobDetails.objects.create(company_id=comp,jobname=jobname,companyname=companyname,companyaddress=companyaddress,jobdescription=jobdescription,qualification=qualification,responsibility=responsibility,location=location,companycontact=companycontact,salarypackage=salarypackage,experience=experience,logo=logo)
+        newjob = JobDetails.objects.create(company_id=comp,jobname=jobname,companyname=companyname,companyaddress=companyaddress,jobdescription=jobdescription,qualification=qualification,responsibility=responsibility,location=location,companycontact=companycontact,salarypackage=salarypackage,experience=experience,logo=logo,companywebsite=companywebsite)
         
         message = "Job Post SuccessFully"
         return render(request,"app/company/jobpost.html",{'msg':message})
+    
+    
+def JobListPage(request):
+    all_job = JobDetails.objects.all()
+    return render(request,"app/company/jobpostlist.html",{'all_job':all_job})
+
+
+def CandidateJobListPage(request):
+    all_job = JobDetails.objects.all()
+    return render(request,"app/job-list.html",{'all_job':all_job})
