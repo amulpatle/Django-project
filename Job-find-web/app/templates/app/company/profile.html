@@ -19,15 +19,36 @@
         {% csrf_token %}
         <div class="mb-3">
           <label for="first_name" class="form-label">First Name:</label>
-          <input type="text" class="form-control" id="first_name" required />
+          <input
+            type="text"
+            class="form-control"
+            id="first_name"
+            name="firstname"
+            value="{{comp.firstname}}"
+            required
+          />
         </div>
         <div class="mb-3">
           <label for="last_name" class="form-label">Last Name:</label>
-          <input type="text" class="form-control" id="last_name" required />
+          <input
+            type="text"
+            class="form-control"
+            id="last_name"
+            name="lastname"
+            value="{{comp.lastname}}"
+            required
+          />
         </div>
         <div class="mb-3">
           <label for="email" class="form-label">Email Address:</label>
-          <input type="email" class="form-control" id="email" required />
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            value="{{user.email}}"
+            required
+          />
         </div>
         <div class="mb-3">
           <label for="state" class="form-label">State:</label>

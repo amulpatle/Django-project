@@ -194,5 +194,8 @@ def UpdateProfile(request, pk):
 def CompanyIndexPage(request):
     return render(request,"app/company/index.html")
 
-def CompanyProfilePage(request):
-    return render(request,"app/company/profile.html")
+def CompanyProfilePage(request,pk):
+    user = UserMaster.objects.get(pk=pk)
+    comp = Company.objects.get(user_id = user)
+    return render(request,"app/company/profile.html",{'user':user,'comp':comp})
+
