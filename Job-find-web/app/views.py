@@ -232,3 +232,31 @@ def UpdateCompnyProfile(request,pk):
         # url = f"/companyprofile/{pk}"
         # return redirect(url)
 
+
+def JobPostPage(request):
+    return render(request,"app/company/jobpost.html")
+
+def JobDetailSubmit(request):
+    if 'id' in request.session:
+        user_id = request.session['id']
+        user = UserMaster.objects.get(id=user_id)
+    # user = UserMaster.objects.get(id=user_id)
+    if user.role == "Company":
+        comp = Company.objects.get(user_id=user)
+        jobname = request.POST['jobname']
+        companyname = request.POST['companyname']
+        companyaddress = request.POST['companyaddress']
+        jobdescription = request.POST['jobdescription']
+        qualification = request.POST['qualification']
+        responsibility = request.POST['responsibility']
+        location = request.POST['location']
+        # companyemail = request.POST['companyemail']
+        companycontact = request.POST['companycontact']
+        salarypackage = request.POST['salarypackage']
+        experience = request.POST['experience']
+        logo = request.FILES['image']
+        
+        newjob = JobDetails.objects.create(company_id=comp,jobname=jobname,companyname=companyname,companyaddress=companyaddress,jobdescription=jobdescription,qualification=qualification,responsibility=responsibility,location=location,companycontact=companycontact,salarypackage=salarypackage,experience=experience,logo=logo)
+        
+        message = "Job Post SuccessFully"
+        return render(request,"app/company/jobpost.html",{'msg':message})
