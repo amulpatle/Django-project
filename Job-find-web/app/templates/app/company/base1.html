@@ -68,7 +68,7 @@
           >
             <li><a class="dropdown-item" href="{% url 'companyprofile' pk=request.session.id %}" >Profile</a></li>
             <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#!">Logout</a></li>
+            <li><a class="dropdown-item" href="{% url 'companylogout' %}">Logout</a></li>
           </ul>
         </li>
       </ul>
