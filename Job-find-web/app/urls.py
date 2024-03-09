@@ -20,5 +20,7 @@ urlpatterns = [
    path("jobpostlist/",views.JobListPage, name="joblistpage"),
    path("joblist/",views.CandidateJobListPage,name="joblist"),
    path("companylogout/",views.companylogout,name="companylogout"),
-   path("apply/<int:pk>",views.ApplyPage,name="apply")
+   path("apply/<int:pk>",views.ApplyPage,name="apply"),
+   path("applyjob/<int:pk>",views.ApplyJob,name="applyjob"),
+   
 ]

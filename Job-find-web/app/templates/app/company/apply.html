@@ -14,14 +14,19 @@
   </head>
   <body>
     <div class="container mt-5">
+      {% if msg %}
+
+      <h4 style="color: green">{{msg}}</h4>
+      {% endif %}
       <h2>Contact Information</h2>
       {% if user %} {% if cand %} {% if job %}
       <form
-        action="{% url 'updateprofile' pk=request.session.id %}"
+        action="{% url 'applyjob' pk=job.id %}"
         method="post"
         enctype="multipart/form-data"
       >
         {% csrf_token %}
+
         <div class="mb-3">
           <label for="first_name" class="form-label">First Name:</label>
           <input
@@ -92,7 +97,7 @@
             type="text"
             class="form-control"
             id="first_name"
-            name="highesteducation"
+            name="education"
             value="{{cand.highestedu}}"
             required
           />
@@ -131,17 +136,28 @@
         </div>
 
         <div class="mb-3">
+          <label for="address" class="form-label">Experience:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="first_name"
+            name="experience"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
           <label for="Porfolio" class="form-label">Porfolio Website</label>
           <input
             type="url"
             class="form-control"
-            id="company_website"
+            id="Porfolio_web"
             name="website"
           />
         </div>
         <div class="mb-3">
           <label for="file" class="form-label">Upload Your Resume</label>
-          <input type="file" class="form-control" id="file" name="image" />
+          <input type="file" class="form-control" id="file" name="resume" />
         </div>
         <button type="submit" class="btn btn-primary">Save</button>
       </form>

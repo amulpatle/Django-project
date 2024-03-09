@@ -201,6 +201,22 @@ def ApplyPage(request,pk):
         
     return render(request,"app/company/apply.html",{'user':user,'cand':cand,'job':job})
 
+def ApplyJob(request,pk):
+    user = request.session['id']
+    if user:
+        can = Candidate.objects.get(user_id=user)
+        job = JobDetails.objects.get(id=pk)
+        education = request.POST['education']
+        
+        min_salary = request.POST['min_salary']
+        max_salary = request.POST['max_salary']
+        experience = request.POST['experience']
+        Porfolio_web = request.POST['website']
+        resume = request.FILES['resume']
+        
+        newapply = ApplyList.objects.create(candidate=can,job=job,education=education,resume=resume,max_salary=max_salary,min_salary=min_salary,experience=experience)
+        message = "Apply done successfully"
+        return render(request,"app/company/apply.html",{'msg':message})
 
 ############## Company Side ##############
 

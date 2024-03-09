@@ -71,6 +71,7 @@ class ApplyList(models.Model):
     candidate = models.ForeignKey(Candidate,on_delete=models.CASCADE)
     job = models.ForeignKey(JobDetails,on_delete=models.CASCADE)
     education = models.CharField(max_length=250)
+    experience = models.CharField(max_length=100,default="")
     website = models.CharField(max_length=250)
     min_salary = models.CharField(max_length=250)
     max_salary = models.CharField(max_length=250)
