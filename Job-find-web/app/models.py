@@ -66,3 +66,12 @@ class JobDetails(models.Model):
     experience = models.CharField(max_length= 250)
     logo = models.ImageField(upload_to="app/img/jobpost",default="")
     
+    
+class ApplyList(models.Model):
+    candidate = models.ForeignKey(Candidate,on_delete=models.CASCADE)
+    job = models.ForeignKey(JobDetails,on_delete=models.CASCADE)
+    education = models.CharField(max_length=250)
+    website = models.CharField(max_length=250)
+    min_salary = models.CharField(max_length=250)
+    max_salary = models.CharField(max_length=250)
+    resume = models.FileField(upload_to="app/resume")
