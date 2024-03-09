@@ -192,6 +192,16 @@ def UpdateProfile(request, pk):
         url = f'/profile/{pk}'
         return redirect(url)
 
+
+def ApplyPage(request,pk):
+    user = request.session['id']
+    if user:
+        cand = Candidate.objects.get(user_id = user)
+        job = JobDetails.objects.get(id=pk)
+        
+    return render(request,"app/company/apply.html",{'user':user,'cand':cand,'job':job})
+
+
 ############## Company Side ##############
 
 def CompanyIndexPage(request):
