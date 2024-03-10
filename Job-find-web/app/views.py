@@ -296,11 +296,29 @@ def JobListPage(request):
     return render(request,"app/company/jobpostlist.html",{'all_job':all_job})
 
 
+def JobapplyList(request):
+    all_jobapply = ApplyList.objects.all()
+    return render(request,"app/company/applyjoblist.html",{'all_job':all_jobapply})
+
 def CandidateJobListPage(request):
     all_job = JobDetails.objects.all()
     return render(request,"app/job-list.html",{'all_job':all_job})
+
+
 
 def companylogout(request):
     del request.session['email']
     del request.session['password']
     return redirect('index')
+
+
+###### conect other pages to web #####
+
+def aboutUs(request):
+    return render(request,"app/about.html")
+
+def contactUs(request):
+    return render(request,"app/contact.html")
+
+def services(request):
+    return render(request,"app/services.html"),

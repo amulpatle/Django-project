@@ -162,8 +162,8 @@
               <a href="{% static 'javascript:void(0)' %}">Pages</a
               ><span class="menu-arrow"></span>
               <ul class="submenu">
-                <li><a href="about.html">About us</a></li>
-                <li><a href="services.html">Services</a></li>
+                <li><a href="{% url 'aboutus' %}">About us</a></li>
+                <li><a href="{% url 'services' %}">Services</a></li>
                 <li><a href="team.html">Team</a></li>
                 <li><a href="faq.html">Faqs</a></li>
                 <li><a href="pricing.html">Pricing plans</a></li>
@@ -212,7 +212,7 @@
               </ul>
             </li>
             <li>
-              <a href="contact.html">contact</a>
+              <a href="{% url 'contactus' %}">contact</a>
             </li>
           </ul>
           <!--end navigation menu-->

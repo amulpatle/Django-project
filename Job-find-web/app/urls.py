@@ -10,6 +10,12 @@ urlpatterns = [
    path("loginuser/",views.LoginUser,name="login"),
    path("profile/<int:pk>",views.ProfilePage,name="profile"),
    path('updateprofile/<int:pk>', views.UpdateProfile, name='updateprofile'),
+   ################ Conect other pages to our website #############
+   
+   path("aboutus/",views.aboutUs,name="aboutus"),
+   path("contactus/",views.contactUs,name="contactus"),
+   path("services/",views.services,name="services"),
+   
    ################ company side ############
    
    path("companyindex/",views.CompanyIndexPage,name = "companyindex"),
@@ -22,5 +28,6 @@ urlpatterns = [
    path("companylogout/",views.companylogout,name="companylogout"),
    path("apply/<int:pk>",views.ApplyPage,name="apply"),
    path("applyjob/<int:pk>",views.ApplyJob,name="applyjob"),
+   path("applyjoblist/",views.JobapplyList,name="applylist")
    
 ]
