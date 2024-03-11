@@ -321,4 +321,9 @@ def contactUs(request):
     return render(request,"app/contact.html")
 
 def services(request):
-    return render(request,"app/services.html"),
+    return render(request,"app/services.html")
+
+def candidatelogout(request):
+    del request.session['email']
+    del request.session['password']
+    return redirect('index')
