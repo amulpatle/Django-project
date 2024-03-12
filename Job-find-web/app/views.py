@@ -323,7 +323,7 @@ def contactUs(request):
 def services(request):
     return render(request,"app/services.html")
 
-def candidatelogout(request):
-    del request.session['email']
-    del request.session['password']
-    return redirect('index')
+# def candidatelogout(request):
+#     del request.session['email']
+#     del request.session['password']
+#     return redirect('index')

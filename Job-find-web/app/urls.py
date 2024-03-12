@@ -15,7 +15,7 @@ urlpatterns = [
    path("aboutus/",views.aboutUs,name="aboutus"),
    path("contactus/",views.contactUs,name="contactus"),
    path("services/",views.services,name="services"),
-   path("userlogout/",views.candidatelogout,name="userlogout"),
+   # path("userlogout/",views.candidatelogout,name="userlogout"),
    
    ################ company side ############
    
