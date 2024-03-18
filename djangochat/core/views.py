@@ -1,6 +1,8 @@
 from django.contrib.auth import login
 from django.shortcuts import render, redirect
 
+
+
 from .forms import SignUpForm
 
 def frontpage(request):
@@ -20,3 +22,4 @@ def  signup(request):
         form = SignUpForm()
     
     return render(request,'core/signup.html',{'form':form})
+
